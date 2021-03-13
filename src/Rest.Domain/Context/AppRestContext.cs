@@ -1,0 +1,46 @@
+﻿using Rest.Domain.Entities;
+using Rest.Domain.EntityTypeConfigurations;
+using Microsoft.EntityFrameworkCore;
+
+namespace Rest.Domain.Context
+{
+    public class RestContext : DbContext
+    {
+        public RestContext(DbContextOptions<RestContext> dbContextOptions) : base(dbContextOptions)
+        {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+        }
+
+        public DbSet<Extras> Extras { get; set; }
+        public DbSet<Drinks> Drinks { get; set; }
+        public DbSet<Menus> Menus { get; set; }
+        public DbSet<Restaurants> Restaurants { get; set; }
+        public DbSet<Tables> Tables { get; set; }
+        public DbSet<RestaurantsMenus> RestaurantsMenus { get; set; }
+        public DbSet<MenusCategories> MenusCategories { get; set; }
+        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Dishes> Dishes { get; set; }
+        public DbSet<DishesOptions> DishesOptions { get; set; }
+        public DbSet<Options> Options { get; set; }
+        public DbSet<DrinksOptions> DrinksOptions { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ExrasEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DrinksEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new RestaurantsEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new OptionsEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new RestaurantsMenusEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoriesEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MenusCategoriesEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MenusEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DrinksOptionsEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DishesEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DishesOptionsEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TablesEntityTypeConfiguration());
+        }
+    }
+}
