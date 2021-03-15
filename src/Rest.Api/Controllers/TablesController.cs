@@ -18,10 +18,16 @@ namespace Rest.Controllers
             _tablesRepository = tablesRepository;
         }
 
-        [HttpDelete("{idTable}")]
-        public async Task<ActionResult> Delete(int idTable)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            return Ok(await _tablesRepository.Delete(idTable));
+            return Ok(await _tablesRepository.Delete(id));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await this._tablesRepository.Get(id));
         }
 
         [HttpGet]

@@ -18,10 +18,16 @@ namespace Rest.Controllers
             this._extrasRepository = extrasRepository;
         }
 
-        [HttpDelete("{idExtra}")]
-        public async Task<ActionResult> Delete(int idExtra)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            return Ok(await _extrasRepository.Delete(idExtra));
+            return Ok(await _extrasRepository.Delete(id));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await this._extrasRepository.Get(id));
         }
 
         [HttpGet]

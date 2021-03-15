@@ -20,10 +20,16 @@ namespace Rest.Controllers
             _menusRepository = menusRepository;
         }
 
-        [HttpDelete("{idRestaurant}")]
-        public async Task<ActionResult> Delete(int idRestaurant)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            return Ok(await _restaurantsRepository.Delete(idRestaurant));
+            return Ok(await _restaurantsRepository.Delete(id));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await this._restaurantsRepository.Get(id));
         }
 
         [HttpGet]
@@ -34,11 +40,11 @@ namespace Rest.Controllers
             return result;
         }
 
-        [HttpGet("{idRestaurant}/[Action]")]
-        public async Task<IActionResult> Menus(int idRestaurant)
+        [HttpGet("{id}/[Action]")]
+        public async Task<IActionResult> Menus(int id)
         {
             return Ok(await _menusRepository.List(p =>
-                p.RestaurantsMenus.Select(s => s.IdRestaurant).Contains(idRestaurant)));
+                p.RestaurantsMenus.Select(s => s.IdRestaurant).Contains(id)));
         }
 
         [HttpPost]

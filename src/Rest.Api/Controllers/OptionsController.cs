@@ -18,10 +18,16 @@ namespace Rest.Controllers
             this._optionsRepository = optionsRepository;
         }
 
-        [HttpDelete("{idOption}")]
-        public async Task<ActionResult> Delete(int idOption)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            return Ok(await _optionsRepository.Delete(idOption));
+            return Ok(await _optionsRepository.Delete(id));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await this._optionsRepository.Get(id));
         }
 
         [HttpGet]

@@ -18,10 +18,16 @@ namespace Rest.Controllers
             _menusRepository = menusRepository;
         }
 
-        [HttpDelete("{idMenu}")]
-        public async Task<ActionResult> Delete(int idMenu)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            return Ok(await _menusRepository.Delete(idMenu));
+            return Ok(await _menusRepository.Delete(id));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await this._menusRepository.Get(id));
         }
 
         [HttpGet]
