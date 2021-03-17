@@ -21,6 +21,7 @@ namespace Rest.Domain.Context
         public DbSet<Tables> Tables { get; set; }
         public DbSet<RestaurantsMenus> RestaurantsMenus { get; set; }
         public DbSet<MenusCategories> MenusCategories { get; set; }
+        public DbSet<MenusOptions> MenusOptions { get; set; }
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Dishes> Dishes { get; set; }
         public DbSet<DishesOptions> DishesOptions { get; set; }
@@ -41,6 +42,7 @@ namespace Rest.Domain.Context
             modelBuilder.ApplyConfiguration(new DishesEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DishesOptionsEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new TablesEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MenusOptionsEntityTypeConfiguration());
         }
     }
 }

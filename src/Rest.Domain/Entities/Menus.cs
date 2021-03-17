@@ -15,6 +15,6 @@ namespace Rest.Domain.Entities
 
         public virtual ICollection<RestaurantsMenus> RestaurantsMenus { get; set; }
         public virtual ICollection<MenusCategories> MenusCategories { get; set; }
-        public virtual ICollection<Options> Options { get; set; }
+        public virtual ICollection<MenusOptions> MenuOptions { get; set; }
     }
 }

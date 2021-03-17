@@ -7,12 +7,10 @@ namespace Rest.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public int IdMenu { get; set; }
 
-
-        public virtual Menus Menus { get; set; }
 
         public virtual ICollection<DishesOptions> DishesOptions { get; set; }
         public virtual ICollection<DrinksOptions> DrinksOptions { get; set; }
+        public virtual ICollection<MenusOptions> MenuOptions { get; set; }
     }
 }

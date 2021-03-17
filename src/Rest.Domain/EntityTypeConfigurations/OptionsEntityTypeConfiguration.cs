@@ -11,8 +11,6 @@ namespace Rest.Domain.EntityTypeConfigurations
             builder.ToTable(nameof(Options));
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName(@"IdOption");
-
-            builder.HasOne<Menus>(x => x.Menus).WithMany(m => m.Options).HasForeignKey(fk => fk.IdMenu);
         }
     }
 }
