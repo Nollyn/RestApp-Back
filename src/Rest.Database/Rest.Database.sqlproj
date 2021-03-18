@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Rest.Database</Name>
+    <Name>Rest.DataBase</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{21adf836-91f6-4fcc-9a88-82547e1f0dc3}</ProjectGuid>
+    <ProjectGuid>{45621a3d-7ab5-4dae-9895-17d95d7cf649}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>AppRest.Database</RootNamespace>
-    <AssemblyName>AppRest.Database</AssemblyName>
+    <RootNamespace>Rest.DataBase</RootNamespace>
+    <AssemblyName>Rest.DataBase</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -65,10 +65,16 @@
     <Build Include="dbo\Tables\Restaurants.sql" />
     <Build Include="dbo\Tables\PersistedGrants.sql" />
     <Build Include="dbo\Tables\Options.sql" />
+    <Build Include="dbo\Tables\MenusOptions.sql" />
     <Build Include="dbo\Tables\MenusCategories.sql" />
     <Build Include="dbo\Tables\Menus.sql" />
     <Build Include="dbo\Tables\Extras.sql" />
+    <Build Include="dbo\Tables\DrinksOptions.sql" />
+    <Build Include="dbo\Tables\Drinks.sql" />
+    <Build Include="dbo\Tables\DishesOptions.sql" />
+    <Build Include="dbo\Tables\Dishes.sql" />
     <Build Include="dbo\Tables\DeviceCodes.sql" />
+    <Build Include="dbo\Tables\CategoriesDishes.sql" />
     <Build Include="dbo\Tables\Categories.sql" />
     <Build Include="dbo\Tables\AspNetUserTokens.sql" />
     <Build Include="dbo\Tables\AspNetUsers.sql" />
@@ -78,9 +84,5 @@
     <Build Include="dbo\Tables\AspNetRoles.sql" />
     <Build Include="dbo\Tables\AspNetRoleClaims.sql" />
     <Build Include="dbo\Tables\__EFMigrationsHistory.sql" />
-    <Build Include="dbo\Tables\DrinksOptions.sql" />
-    <Build Include="dbo\Tables\Drinks.sql" />
-    <Build Include="dbo\Tables\DishesOptions.sql" />
-    <Build Include="dbo\Tables\Dishes.sql" />
   </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@
     [Name]        NVARCHAR (50)   NOT NULL,
     [Description] NVARCHAR (MAX)  NULL,
     [Price]       DECIMAL (18)    NOT NULL,
-    [Image]       VARBINARY (MAX) NOT NULL,
+    [Image]       VARBINARY (MAX) NULL,
     CONSTRAINT [PK_Drinks] PRIMARY KEY CLUSTERED ([IdDrink] ASC)
 );
 

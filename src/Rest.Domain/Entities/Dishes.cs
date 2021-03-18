@@ -14,5 +14,6 @@ namespace Rest.Domain.Entities
         public virtual Categories Categories { get; set; }
 
         public virtual ICollection<DishesOptions> DishesOptions { get; set; }
+        public virtual ICollection<CategoriesDishes> CategoriesDishes { get; set; }
     }
 }

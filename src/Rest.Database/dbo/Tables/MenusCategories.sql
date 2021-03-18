@@ -7,5 +7,3 @@
     CONSTRAINT [FK_MenusCategories_Menus] FOREIGN KEY ([IdMenu]) REFERENCES [dbo].[Menus] ([IdMenu])
 );
 
-
-

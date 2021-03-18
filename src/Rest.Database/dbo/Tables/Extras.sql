@@ -7,5 +7,3 @@
     CONSTRAINT [FK_Extras_Categories] FOREIGN KEY ([IdCategory]) REFERENCES [dbo].[Categories] ([IdCategory])
 );
 
-
-

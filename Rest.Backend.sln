@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Api", "src\Rest.Api\Rest.Api.csproj", "{A3039A84-A828-4730-9050-5DF4D316CC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rest.Api", "src\Rest.Api\Rest.Api.csproj", "{A3039A84-A828-4730-9050-5DF4D316CC32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Core", "src\Rest.Core\Rest.Core.csproj", "{6493B2D6-3968-4FD2-B0A9-CD523190B50F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rest.Core", "src\Rest.Core\Rest.Core.csproj", "{6493B2D6-3968-4FD2-B0A9-CD523190B50F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Database", "src\Rest.Database\Rest.Database.sqlproj", "{21ADF836-91F6-4FCC-9A88-82547E1F0DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rest.Domain", "src\Rest.Domain\Rest.Domain.csproj", "{71D05300-577F-4522-AF91-6C8077946F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Domain", "src\Rest.Domain\Rest.Domain.csproj", "{71D05300-577F-4522-AF91-6C8077946F89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rest.Models", "src\Rest.Models\Rest.Models.csproj", "{6212C4E2-DCFB-449B-849A-6444894245CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Models", "src\Rest.Models\Rest.Models.csproj", "{6212C4E2-DCFB-449B-849A-6444894245CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rest.Repositories", "src\Rest.Repositories\Rest.Repositories.csproj", "{BD65A5AB-6655-480F-94D8-BF00BC30D7AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Repositories", "src\Rest.Repositories\Rest.Repositories.csproj", "{BD65A5AB-6655-480F-94D8-BF00BC30D7AD}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Rest.DataBase", "src\Rest.DataBase\Rest.DataBase.sqlproj", "{45621A3D-7AB5-4DAE-9895-17D95D7CF649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{6493B2D6-3968-4FD2-B0A9-CD523190B50F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6493B2D6-3968-4FD2-B0A9-CD523190B50F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6493B2D6-3968-4FD2-B0A9-CD523190B50F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21ADF836-91F6-4FCC-9A88-82547E1F0DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21ADF836-91F6-4FCC-9A88-82547E1F0DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21ADF836-91F6-4FCC-9A88-82547E1F0DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21ADF836-91F6-4FCC-9A88-82547E1F0DC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71D05300-577F-4522-AF91-6C8077946F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71D05300-577F-4522-AF91-6C8077946F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71D05300-577F-4522-AF91-6C8077946F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,12 @@ Global
 		{BD65A5AB-6655-480F-94D8-BF00BC30D7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD65A5AB-6655-480F-94D8-BF00BC30D7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD65A5AB-6655-480F-94D8-BF00BC30D7AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45621A3D-7AB5-4DAE-9895-17D95D7CF649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45621A3D-7AB5-4DAE-9895-17D95D7CF649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45621A3D-7AB5-4DAE-9895-17D95D7CF649}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{45621A3D-7AB5-4DAE-9895-17D95D7CF649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45621A3D-7AB5-4DAE-9895-17D95D7CF649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45621A3D-7AB5-4DAE-9895-17D95D7CF649}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,5 +7,3 @@
     CONSTRAINT [FK_DishesOptions_Options] FOREIGN KEY ([IdOption]) REFERENCES [dbo].[Options] ([IdOption])
 );
 
-
-

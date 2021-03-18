@@ -9,5 +9,3 @@
     CONSTRAINT [FK_Menus_Menus] FOREIGN KEY ([IdMenu]) REFERENCES [dbo].[Menus] ([IdMenu])
 );
 
-
-

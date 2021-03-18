@@ -7,5 +7,3 @@
     CONSTRAINT [FK_DrinksOptions_Options] FOREIGN KEY ([IdOption]) REFERENCES [dbo].[Options] ([IdOption])
 );
 
-
-
