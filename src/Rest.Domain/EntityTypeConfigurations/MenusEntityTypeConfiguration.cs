@@ -10,7 +10,6 @@ namespace Rest.Domain.EntityTypeConfigurations
         {
             builder.ToTable(nameof(Menus));
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName(@"IdMenu");
         }
     }
 }

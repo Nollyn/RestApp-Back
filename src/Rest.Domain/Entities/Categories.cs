@@ -9,10 +9,6 @@ namespace Rest.Domain.Entities
         public string Description { get; set; }
 
         public virtual ICollection<Extras> Extras { get; set; }
-
-        public virtual ICollection<Dishes> Dishes { get; set; }
-
         public virtual ICollection<MenusCategories> MenusCategories { get; set; }
-        public virtual ICollection<CategoriesDishes> CategoriesDishes { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Rest.Models
 {
-    public class RestaurantsMenusDto : BaseEntity
+    public class RestaurantsMenusDto
     {
         public int IdRestaurant { get; set; }
         public int IdMenu { get; set; }

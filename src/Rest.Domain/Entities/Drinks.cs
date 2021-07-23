@@ -11,5 +11,6 @@ namespace Rest.Domain.Entities
         public byte[] Image { get; set; }
 
         public virtual ICollection<DrinksOptions> DrinksOptions { get; set; }
+        public virtual ICollection<OrdersDrinks> OrdersDrinks { get; set; }
     }
 }

@@ -9,8 +9,7 @@ namespace Rest.Domain.EntityTypeConfigurations
         public void Configure(EntityTypeBuilder<DrinksOptions> builder)
         {
             builder.ToTable(nameof(DrinksOptions));
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName(@"IdDrinkOption");
+            builder.HasKey(x => new { x.IdOption, x.IdDrink });
 
             builder.HasOne<Options>(x => x.Options).WithMany(m => m.DrinksOptions).HasForeignKey(fk => fk.IdOption);
             builder.HasOne<Drinks>(x => x.Drinks).WithMany(m => m.DrinksOptions).HasForeignKey(fk => fk.IdDrink);

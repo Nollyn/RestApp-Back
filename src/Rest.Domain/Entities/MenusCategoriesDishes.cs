@@ -2,12 +2,13 @@
 
 namespace Rest.Domain.Entities
 {
-    public class CategoriesDishes : BaseEntity
+    public class MenusCategoriesDishes : BaseEntity
     {
-        public int IdCategory { get; set; }
+        public int IdMenuCategory { get; set; }
         public int IdDish { get; set; }
 
-        public virtual Categories Categories { get; set; }
+
         public virtual Dishes Dishes { get; set; }
+        public virtual MenusCategories MenusCategories { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace Rest.Domain.EntityTypeConfigurations
         {
             builder.ToTable(nameof(Tables));
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName(@"IdTable");
 
             builder.HasOne<Restaurants>(x => x.Restaurants).WithMany(m => m.Tables).HasForeignKey(fk => fk.IdRestaurant);
         }

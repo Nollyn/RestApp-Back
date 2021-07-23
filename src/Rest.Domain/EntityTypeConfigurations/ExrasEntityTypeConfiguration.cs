@@ -10,7 +10,6 @@ namespace Rest.Domain.EntityTypeConfigurations
         {
             builder.ToTable(nameof(Extras));
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName(@"IdExtra");
 
             builder.HasOne<Categories>(x => x.Categories).WithMany(m => m.Extras).HasForeignKey(fk => fk.IdCategory);
         }

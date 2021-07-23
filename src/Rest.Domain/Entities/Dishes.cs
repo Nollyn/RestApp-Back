@@ -9,11 +9,10 @@ namespace Rest.Domain.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         public byte[] Image { get; set; }
-        public int IdCategory { get; set; }
 
-        public virtual Categories Categories { get; set; }
 
         public virtual ICollection<DishesOptions> DishesOptions { get; set; }
-        public virtual ICollection<CategoriesDishes> CategoriesDishes { get; set; }
+        public virtual ICollection<MenusCategoriesDishes> MenusCategoriesDishes { get; set; }
+        public virtual ICollection<OrdersDiches> OrdersDiches { get; set; }
     }
 }

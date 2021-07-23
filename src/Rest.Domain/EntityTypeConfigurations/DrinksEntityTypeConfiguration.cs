@@ -10,7 +10,6 @@ namespace Rest.Domain.EntityTypeConfigurations
         {
             builder.ToTable(nameof(Drinks));
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName(@"IdDrink");
             builder.Property(x => x.Price).HasColumnName(@"Price").HasColumnType("decimal");
         }
     }

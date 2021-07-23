@@ -10,10 +10,7 @@ namespace Rest.Domain.EntityTypeConfigurations
         {
             builder.ToTable(nameof(Dishes));
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName(@"IdDish");
-            builder.Property(x => x.Price).HasColumnName(@"Price").HasColumnType("decimal");
-
-            builder.HasOne<Categories>(x => x.Categories).WithMany(m => m.Dishes).HasForeignKey(fk => fk.IdCategory);
+            builder.Property(x => x.Price).HasColumnType("decimal");
         }
     }
 }

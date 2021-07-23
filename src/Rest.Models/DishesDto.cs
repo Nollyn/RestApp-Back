@@ -10,7 +10,6 @@ namespace Rest.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string Image { get; set; }
-        public int IdCategory { get; set; }
 
         public static implicit operator DishesDto(Dishes domainEntity)
         {
@@ -25,7 +24,6 @@ namespace Rest.Models
                 Name = domainEntity.Name,
                 Price = domainEntity.Price,
                 Image = domainEntity.Image.ToBase64(),
-                IdCategory = domainEntity.IdCategory
             };
         }
         public static implicit operator Dishes(DishesDto dto)
@@ -41,7 +39,6 @@ namespace Rest.Models
                 Name = dto.Name,
                 Image = dto.Image.FromBase64(),
                 Id = dto.Id,
-                IdCategory = dto.IdCategory
             };
         }
     }
