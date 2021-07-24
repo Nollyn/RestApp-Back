@@ -20,7 +20,6 @@ namespace Rest.Domain.Context
         public DbSet<Restaurants> Restaurants { get; set; }
         public DbSet<Tables> Tables { get; set; }
         public DbSet<RestaurantsMenus> RestaurantsMenus { get; set; }
-        public DbSet<MenusCategories> MenusCategories { get; set; }
         public DbSet<MenusOptions> MenusOptions { get; set; }
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Dishes> Dishes { get; set; }
@@ -29,6 +28,7 @@ namespace Rest.Domain.Context
         public DbSet<DrinksOptions> DrinksOptions { get; set; }
         public DbSet<OrdersDiches> OrdersDiches { get; set; }
         public DbSet<OrdersDrinks> OrdersDrinks { get; set; }
+        public DbSet<MenuDishes> MenuDishes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,7 +38,6 @@ namespace Rest.Domain.Context
             modelBuilder.ApplyConfiguration(new OptionsEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new RestaurantsMenusEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CategoriesEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new MenusCategoriesEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new MenusEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DrinksOptionsEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DishesEntityTypeConfiguration());
@@ -48,6 +47,7 @@ namespace Rest.Domain.Context
             modelBuilder.ApplyConfiguration(new OrdersDishesEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new OrdersDrinksEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new OrdersEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuDishesEntityTypeConfiguration());
         }
     }
 }

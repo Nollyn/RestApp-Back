@@ -12,7 +12,7 @@ namespace Rest.Domain.Entities
 
 
         public virtual ICollection<DishesOptions> DishesOptions { get; set; }
-        public virtual ICollection<MenusCategoriesDishes> MenusCategoriesDishes { get; set; }
         public virtual ICollection<OrdersDiches> OrdersDiches { get; set; }
+        public virtual ICollection<MenuDishes> MenuDishes { get; set; }
     }
 }
