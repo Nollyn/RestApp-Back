@@ -14,7 +14,7 @@ namespace Rest.Repositories.Base
     {
         private readonly RestContext RestContext;
 
-        public BaseRepository(RestContext RestContext)
+        protected BaseRepository(RestContext RestContext)
         {
             this.RestContext = RestContext;
         }
@@ -36,11 +36,15 @@ namespace Rest.Repositories.Base
             return await Delete(entity);
         }
 
+        public IQueryable<T> Find(int id)
+        {
+            return RestContext.Set<T>().Where(p => p.Id == id);
+        }
+
         public async Task<T> Get(int id)
         {
             return await RestContext.Set<T>().AsNoTracking().SingleOrDefaultAsync(p => p.Id == id);
         }
-
 
         public async Task<IEnumerable<T>> GetAll()
         {

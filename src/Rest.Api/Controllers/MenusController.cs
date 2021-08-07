@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Rest.Models;
 using Rest.Repositories.Contracts;
 
@@ -18,23 +19,24 @@ namespace Rest.Controllers
             _menusRepository = menusRepository;
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             return Ok(await _menusRepository.Delete(id));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await this._menusRepository.Get(id));
+            var response = await _menusRepository.GetWithDetails(id);
+            return Ok(response);
         }
 
         [HttpGet]
         public async Task<IEnumerable<MenusDto>> Get()
         {
             var extras = await _menusRepository.GetAll();
-            var result = extras.Select(s => (MenusDto) s).ToList();
+            var result = extras.Select(s => (MenusDto)s).ToList();
             return result;
         }
 
@@ -46,8 +48,7 @@ namespace Rest.Controllers
                 return BadRequest();
             }
 
-            var result = await _menusRepository.Insert(menus);
-            return Ok(result);
+            return Ok(await _menusRepository.InsertAndReturn(menus));
         }
 
         [HttpPut]
