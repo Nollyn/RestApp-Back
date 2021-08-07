@@ -1,6 +1,8 @@
-﻿namespace Rest.Domain.Entities
+﻿using Rest.Domain.Entities.Base;
+
+namespace Rest.Domain.Entities
 {
-    public class MenuDishes
+    public class MenuDishes : BaseEntity
     {
         public int IdDish { get; set; }
         public int IdMenu { get; set; }

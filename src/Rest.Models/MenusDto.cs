@@ -1,16 +1,25 @@
 ﻿using Rest.Domain.Entities;
 using Rest.Models.Base;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Rest.Models
 {
     public class MenusDto : BaseDto
     {
+        public MenusDto()
+        {
+            this.MenuDishes = new List<MenuDishes>();
+        }
+
         public string Name { get; set; }
         public string Description { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
         public bool DayMenu { get; set; }
         public int? IdMenuParent { get; set; }
+
+        public List<MenuDishes> MenuDishes { get; set; }
 
 
         public static implicit operator MenusDto(Menus domainEntity)
@@ -40,9 +49,10 @@ namespace Rest.Models
                 Description = dto.Description,
                 Name = dto.Name,
                 Id = dto.Id,
-                Date = dto.Date,
+                Date = dto.Date.Value,
                 IdMenuParent = dto.IdMenuParent,
-                DayMenu = dto.DayMenu
+                DayMenu = dto.DayMenu,
+                MenuDishes = dto.MenuDishes.Select(x => (MenuDishes)x).ToList()
             };
         }
     }

@@ -9,11 +9,12 @@ namespace Rest.Domain.EntityTypeConfigurations
         public void Configure(EntityTypeBuilder<MenuDishes> builder)
         {
             builder.ToTable(nameof(MenuDishes));
-            builder.HasKey(x => new { x.IdCategory, x.IdDish, x.IdMenu });
+            builder.HasKey(x => x.Id);
 
             builder.HasOne<Menus>(x => x.Menus).WithMany(m => m.MenuDishes).HasForeignKey(fk => fk.IdMenu);
             builder.HasOne<Dishes>(x => x.Dishes).WithMany(m => m.MenuDishes).HasForeignKey(fk => fk.IdDish);
-            builder.HasOne<Categories>(x => x.Categories).WithMany(m => m.MenuDishes).HasForeignKey(fk => fk.IdCategory);
+            builder.HasOne<Categories>(x => x.Categories).WithMany(m => m.MenuDishes)
+                .HasForeignKey(fk => fk.IdCategory);
         }
     }
 }
