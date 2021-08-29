@@ -67,11 +67,11 @@ namespace Rest.Models
                 {
                     Date = x.Date,
                     Description = x.Description,
-                    Dishes = x.MenuDishes.AsQueryable().Select(MenuDishesDto.Projection).ToList(),
                     Id = x.Id,
                     Name = x.Name,
                     DayMenu = x.DayMenu,
-                    IdMenuParent = x.IdMenuParent
+                    IdMenuParent = x.IdMenuParent,
+                    Dishes = x.MenuDishes.AsQueryable().Select(MenuDishesDto.Projection).ToList(),
                 };
             }
         }

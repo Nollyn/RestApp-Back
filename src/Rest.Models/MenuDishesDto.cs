@@ -7,7 +7,10 @@ namespace Rest.Models
     public class MenuDishesDto
     {
         public int IdDish { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
         public int IdCategory { get; set; }
+        public string CategoryName { get; set; }
         public int IdMenu { get; set; }
         public decimal Price { get; set; }
         public int Id { get; set; }
@@ -36,7 +39,10 @@ namespace Rest.Models
                     IdCategory = x.IdCategory,
                     IdDish = x.IdDish,
                     IdMenu = x.IdMenu,
-                    Id = x.Id
+                    Id = x.Id,
+                    Name = x.Dishes.Name,
+                    Description = x.Dishes.Description,
+                    CategoryName = x.Categories.Name
                 };
             }
         }

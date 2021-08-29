@@ -21,7 +21,8 @@ namespace Rest.Repositories
 
         public Task<MenusDto> GetWithDetails(int resultId)
         {
-            return this.restContext.Menus.Where(p => p.Id == resultId).Select(MenusDto.Projection)
+            return this.restContext.Menus
+                .Where(p => p.Id == resultId).Select(MenusDto.Projection)
                 .SingleOrDefaultAsync();
         }
 
