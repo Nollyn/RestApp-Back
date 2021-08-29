@@ -10,5 +10,6 @@ namespace Rest.Repositories.Contracts
         //Task<List<RestaurantsMenus>> GetByRestaurant(int idRestaurant);
         Task<MenusDto> GetWithDetails(int resultId);
         Task<MenusDto> InsertAndReturn(MenusDto menus);
+        Task<bool> UpdateWithDishes(Menus dto);
     }
 }

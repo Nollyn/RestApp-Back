@@ -5,6 +5,6 @@ namespace Rest.Services.Contracts
 {
     public interface IMenusService
     {
-        Task<MenusDto> Update(MenusDto dto);
+        Task<bool> UpdateWithDishes(MenusDto menus);
     }
 }

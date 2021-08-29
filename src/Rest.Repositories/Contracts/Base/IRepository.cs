@@ -10,6 +10,7 @@ namespace Rest.Repositories.Contracts.Base
     public interface IRepository<T> where T : BaseEntity
     {
         Task<T> Get(int id);
+        Task<T> Get(int id, params Expression<Func<T, object>>[] includes);
         Task<IEnumerable<T>> GetAll();
         Task<IEnumerable<T>> List(Expression<Func<T, bool>> expression);
         Task<T> Insert(T entity);
@@ -19,3 +20,4 @@ namespace Rest.Repositories.Contracts.Base
         IQueryable<T> Find(int id);
     }
 }
+

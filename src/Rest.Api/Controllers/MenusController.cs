@@ -62,7 +62,7 @@ namespace Rest.Controllers
                 return BadRequest();
             }
 
-            return Ok(await _menusService.Update(menus));
+            return Ok(await _menusService.UpdateWithDishes(menus));
         }
     }
 }

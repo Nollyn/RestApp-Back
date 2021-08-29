@@ -10,6 +10,7 @@ namespace Rest.Models
         public int IdCategory { get; set; }
         public int IdMenu { get; set; }
         public decimal Price { get; set; }
+        public int Id { get; set; }
 
         public static implicit operator MenuDishes(MenuDishesDto dto)
         {
@@ -19,7 +20,8 @@ namespace Rest.Models
                     IdDish = dto.IdDish,
                     IdCategory = dto.IdCategory,
                     Price = dto.Price,
-                    IdMenu = dto.IdMenu
+                    IdMenu = dto.IdMenu,
+                    Id = dto.Id
                 }
                 : null;
         }
@@ -34,6 +36,7 @@ namespace Rest.Models
                     IdCategory = x.IdCategory,
                     IdDish = x.IdDish,
                     IdMenu = x.IdMenu,
+                    Id = x.Id
                 };
             }
         }

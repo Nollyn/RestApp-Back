@@ -14,6 +14,13 @@ namespace Rest.Repositories.Base
     {
         private readonly RestContext RestContext;
 
+        public async Task<T> Get(int id, params Expression<Func<T, object>>[] includes)
+        {
+            var query = RestContext.Set<T>().AsNoTracking().Where(p => p.Id == id);
+            query = includes.Aggregate(query, (current, item) => current.Include(item));
+            return await query.FirstOrDefaultAsync();
+        }
+
         protected BaseRepository(RestContext RestContext)
         {
             this.RestContext = RestContext;

@@ -14,15 +14,9 @@ namespace Rest.Services
             _menusRepository = menusRepository;
         }
 
-        public Task<MenusDto> Update(MenusDto dto)
+        public async Task<bool> UpdateWithDishes(MenusDto menus)
         {
-            foreach (var i in dto.Dishes)
-            {
-                if ()
-                {
-                    
-                }
-            }
+            return await _menusRepository.UpdateWithDishes(menus);
         }
     }
 }

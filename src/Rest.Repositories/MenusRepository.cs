@@ -30,5 +30,41 @@ namespace Rest.Repositories
             var entity = await this.Insert(menus);
             return await this.GetWithDetails(entity.Id);
         }
+
+        public async Task<bool> UpdateWithDishes(Menus dto)
+        {
+            var menuEntity = await restContext.Menus
+                .Include(i => i.MenuDishes)
+                .SingleOrDefaultAsync(p => p.Id == dto.Id);
+
+            if (menuEntity == null)
+            {
+                return false;
+            }
+
+            foreach (var menuMenuDish in dto.MenuDishes)
+            {
+                var menuDishesEntity = menuEntity.MenuDishes.SingleOrDefault(p => p.Id == menuMenuDish.Id);
+
+                if (menuDishesEntity != null)
+                {
+                    menuDishesEntity.Price = menuMenuDish.Price;
+                    menuDishesEntity.IdCategory = menuMenuDish.IdCategory;
+                    menuDishesEntity.IdDish = menuMenuDish.IdDish;
+
+                    restContext.Entry(menuDishesEntity).State = EntityState.Modified;
+                }
+                else
+                {
+                    menuEntity.MenuDishes.Add(menuMenuDish);
+                }
+            }
+
+            restContext.Menus.Update(menuEntity);
+
+            var result = await restContext.SaveChangesAsync();
+
+            return result > 0;
+        }
     }
 }
