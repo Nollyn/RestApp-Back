@@ -13,12 +13,10 @@ namespace Rest.Controllers
     public class DishesController : ControllerBase
     {
         private readonly IDishesRepository _dishesRepository;
-        private readonly IMenusService _menusService;
 
         public DishesController(IDishesRepository dishesRepository, IMenusService menusService)
         {
             _dishesRepository = dishesRepository;
-            _menusService = menusService;
         }
 
         [HttpDelete("{id}")]
@@ -61,7 +59,7 @@ namespace Rest.Controllers
                 return BadRequest();
             }
 
-            return Ok(await _menusService.Update(dishes));
+            return Ok(await _dishesRepository.Update(dishes));
         }
     }
 }

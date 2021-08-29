@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rest.Models;
 using Rest.Repositories.Contracts;
+using Rest.Services.Contracts;
 
 namespace Rest.Controllers
 {
@@ -13,10 +14,12 @@ namespace Rest.Controllers
     public class MenusController : ControllerBase
     {
         private readonly IMenusRepository _menusRepository;
+        private readonly IMenusService _menusService;
 
-        public MenusController(IMenusRepository menusRepository)
+        public MenusController(IMenusRepository menusRepository, IMenusService menusService)
         {
             _menusRepository = menusRepository;
+            _menusService = menusService;
         }
 
         [HttpDelete("{id:int}")]
@@ -59,7 +62,7 @@ namespace Rest.Controllers
                 return BadRequest();
             }
 
-            return Ok(await _menusRepository.Update(menus));
+            return Ok(await _menusService.Update(menus));
         }
     }
 }
