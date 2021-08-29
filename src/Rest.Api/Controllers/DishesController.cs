@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Rest.Models;
 using Rest.Repositories.Contracts;
+using Rest.Services.Contracts;
 
 namespace Rest.Controllers
 {
@@ -12,10 +13,12 @@ namespace Rest.Controllers
     public class DishesController : ControllerBase
     {
         private readonly IDishesRepository _dishesRepository;
+        private readonly IMenusService _menusService;
 
-        public DishesController(IDishesRepository dishesRepository)
+        public DishesController(IDishesRepository dishesRepository, IMenusService menusService)
         {
-            this._dishesRepository = dishesRepository;
+            _dishesRepository = dishesRepository;
+            _menusService = menusService;
         }
 
         [HttpDelete("{id}")]
@@ -58,7 +61,7 @@ namespace Rest.Controllers
                 return BadRequest();
             }
 
-            return Ok(await _dishesRepository.Update(dishes));
+            return Ok(await _menusService.Update(dishes));
         }
     }
 }
