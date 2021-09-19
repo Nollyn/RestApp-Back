@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Rest.Domain.Context;
 using Rest.Domain.Entities;
-using Rest.Domain.EntityTypeConfigurations;
 using Rest.Models;
 using Rest.Repositories.Base;
 using Rest.Repositories.Contracts;
@@ -44,8 +42,8 @@ namespace Rest.Repositories
                 return false;
             }
 
-
-            menuEntity.MenuDishes = menuEntity.MenuDishes.Where(p => dto.MenuDishes.Any(a => a.Id == p.Id))
+            menuEntity.MenuDishes = menuEntity.MenuDishes
+                .Where(p => dto.MenuDishes.Any(a => a.Id == p.Id))
                 .ToList();
 
             foreach (var menuMenuDish in dto.MenuDishes)
@@ -67,9 +65,7 @@ namespace Rest.Repositories
             }
 
             restContext.Menus.Update(menuEntity);
-
             var result = await restContext.SaveChangesAsync();
-
             return result > 0;
         }
     }
