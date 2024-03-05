@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rest.Repositories", "src\Re
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Rest.DataBase", "src\Rest.DataBase\Rest.DataBase.sqlproj", "{45621A3D-7AB5-4DAE-9895-17D95D7CF649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Services", "Rest.Services\Rest.Services.csproj", "{8820D7B2-CF73-4119-A408-DE21054A589B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Services", "src\Rest.Services\Rest.Services.csproj", "{8820D7B2-CF73-4119-A408-DE21054A589B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
