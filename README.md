@@ -1,5 +1,5 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This is a REST API for a Restaurant management project. There will be restaurant digital tables where the user can see the restaurnt menu and order from the table itself. Once the order is made it goes into the kitchen to be displayed in a monitor screen to be prepared and later served. The application also allows the restaurant administrator/manager/personel to add, edit, list and delete menus. A menu is build from dishes and drinks which belong to a category. The application allows to manage everything the restaurant decides to offer to the clients.
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
